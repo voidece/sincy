@@ -1,0 +1,50 @@
+{
+  "name": "sincy",
+  "version": "1.0.0",
+  "description": "Dynamic music cards for Discord bots",
+  "author": "Void",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "fonts"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "discord",
+    "music",
+    "canvas",
+    "now-playing",
+    "card",
+    "music-card",
+    "napi-rs",
+    "player-card"
+  ],
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "pnpm@12.9.1"
+}
