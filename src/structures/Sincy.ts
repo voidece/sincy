@@ -2,7 +2,7 @@ import { createCanvas } from "@napi-rs/canvas";
 import { registerFont } from "../functions/registerFonts.js";
 import { formatTime } from "../functions/formatTime.js";
 import { truncate } from "../functions/truncate.js";
-import { fetchArtwork } from "../functions/fetchArtwork.js";
+import { fetchImage } from "../functions/fetchImage.js";
 import type { SincyOptions } from "../types/index.js";
 
 export async function Sincy(options: SincyOptions): Promise<Buffer> {
@@ -34,7 +34,7 @@ export async function Sincy(options: SincyOptions): Promise<Buffer> {
   const title = truncate(options.title, 20);
   const author = truncate(options.author, 25);
 
-  const img = await fetchArtwork(options.artwork, timeout);
+  const img = await fetchImage(options.artwork, timeout);
   const { width: iw, height: ih } = img;
 
   const frame = createCanvas(Math.round(1700 * scale), Math.round(560 * scale));
